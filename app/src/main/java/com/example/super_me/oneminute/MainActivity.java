@@ -5,28 +5,26 @@ import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.Date;
+
+//述说心情，对自己的话
+        //录音功能的实现
 public class MainActivity extends Activity {
 
     private MediaRecorder mediaRecorder;
 
-    //述说心情，对自己的话
-    //录音功能的实现
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initdata();
+        //音频管理器
         mediaRecorder = new MediaRecorder();
-
-
     }
 
-    private void initdata() {
+    public void recode(View v) {
+        //得到当前时间，用作录音命名
 
-        int X=9;
-    }
-
-    public  void recode(View v){
+        Date date = new Date();
 
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 
@@ -34,17 +32,21 @@ public class MainActivity extends Activity {
 
         mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
 
-        mediaRecorder.setOutputFile("/sdcard/sub/a.mp3");
+        String path = "/sdcard/sub/"+date+".mp3";
 
-        try{
 
+        mediaRecorder.setOutputFile(path);
+
+        try {
             mediaRecorder.prepare();
             mediaRecorder.start();
 
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void play(View v) {
 
     }
 
