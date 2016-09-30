@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 
     private void initdata() {
 
+        int X=9;
     }
 
     public  void recode(View v){
