@@ -11,14 +11,11 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="recode"
-        android:text="开始录制" />
-
+        android:text="开始" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="play"
         android:text="播放" />
 </LinearLayout>
